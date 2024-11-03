@@ -7092,11 +7092,19 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eea97c4da28012e4085352debc1a8ef5, type: 2}
+    - target: {fileID: -1113161557195509485, guid: 14dcb6cf41263434690431f4924d6f03, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a25e88e081cdce34396b4fc7abaf9205, type: 2}
     - target: {fileID: 919132149155446097, guid: 14dcb6cf41263434690431f4924d6f03, type: 3}
       propertyPath: m_Name
       value: forniture
       objectReference: {fileID: 0}
     - target: {fileID: 1415832088092921694, guid: 14dcb6cf41263434690431f4924d6f03, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eea97c4da28012e4085352debc1a8ef5, type: 2}
+    - target: {fileID: 1925315571376571926, guid: 14dcb6cf41263434690431f4924d6f03, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eea97c4da28012e4085352debc1a8ef5, type: 2}
