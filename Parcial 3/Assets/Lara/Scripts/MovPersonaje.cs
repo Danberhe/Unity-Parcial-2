@@ -8,18 +8,17 @@ public class MovPersonaje : MonoBehaviour
     public float VeloRot = 200.0f; //Definimos la velocidad de rotacion del personaje
     private Animator animator;
     public float x, y;
+   
 
-    public bool TieneArma = false;
+    
 
     public Rigidbody rb;
   
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
-
-        TieneArma = true;
     }
 
 
@@ -32,16 +31,23 @@ public class MovPersonaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
+        if (ArmaController.apuntando == false)
+        {
 
-        
 
-        animator.SetFloat("velX", x);
-        animator.SetFloat("velY", y);
+            x = Input.GetAxis("Horizontal");
+            y = Input.GetAxis("Vertical");
+
+
+
+            animator.SetFloat("velX", x);
+            animator.SetFloat("velY", y);
+
+        }
 
         
     }
+
     
 }
 
