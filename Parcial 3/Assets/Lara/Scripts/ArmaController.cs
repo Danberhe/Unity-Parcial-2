@@ -20,6 +20,7 @@ public class ArmaController : MonoBehaviour
         {
             apuntando = true;
             animator.SetBool("Disparando",true);
+            Debug.Log("Se la metio");
         }
         if (Input.GetMouseButtonUp(1))
         {
