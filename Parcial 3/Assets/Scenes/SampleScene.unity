@@ -1050,9 +1050,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponTransform: {fileID: 2059146148}
-  fireRate: 1.63
-  projectilePrefab: {fileID: 300982355324469513, guid: 906808fc810ae6540b8eaf3781b8f32a, type: 3}
-  projectileSpeed: 100
+  TimeDisparo: 1
+  Balaprefa: {fileID: 300982355324469513, guid: 906808fc810ae6540b8eaf3781b8f32a, type: 3}
+  velBala: 100
 --- !u!4 &1937756869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6515712193588681746, guid: 52eab2797690b874bb3314f416876f89, type: 3}
