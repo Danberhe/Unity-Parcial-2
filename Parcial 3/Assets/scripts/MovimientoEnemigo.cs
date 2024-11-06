@@ -116,7 +116,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
         if (other.CompareTag("Player") && atacando)
         {
-            other.GetComponent<movimientoQ>().getDamage(damageGolpe);
+            other.GetComponent<MovPersonaje>().getDamage(damageGolpe);
         }
     }
 

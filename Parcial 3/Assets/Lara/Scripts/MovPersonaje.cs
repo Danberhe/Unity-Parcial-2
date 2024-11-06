@@ -8,9 +8,10 @@ public class MovPersonaje : MonoBehaviour
     public float VeloRot = 200.0f; //Definimos la velocidad de rotacion del personaje
     private Animator animator;
     public float x, y;
-   
+    public float salud = 200f;
 
-    
+
+
 
     public Rigidbody rb;
   
@@ -48,6 +49,29 @@ public class MovPersonaje : MonoBehaviour
         
     }
 
-    
+    public void getDamage(int dmg)
+    {
+        salud -= dmg;
+        salud = Mathf.Max(salud, 0); // Asegura que la salud no sea negativa
+        Debug.Log("Rebajó" + dmg + "de vida." + dmg + "/" + salud);
+
+
+        if (salud <= 0)
+        {
+            Debug.Log("LILI HA MUERTO");
+            Muerte();
+            
+        }
+    }
+
+
+
+    public void Muerte()
+    {
+        Debug.Log("Has Muerto");
+        animator.SetBool("Muerte", true);
+    }
+
+
 }
 
