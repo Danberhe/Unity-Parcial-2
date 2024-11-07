@@ -7,10 +7,10 @@ public class Disparo : MonoBehaviour
 
         public float detectionRadius = 10f;
         public LayerMask enemyLayer;
-        public Transform weaponTransform;  // Este debe ser el punto "MuzzlePoint"
-        public float fireRate = 0.5f;      // Tiempo entre disparos
-        public GameObject projectilePrefab;  // Prefab del proyectil
-        public float projectileSpeed = 20f;  // Velocidad del proyectil
+        public Transform weaponTransform;  
+        public float TimeDisparo = 0.5f;      // Tiempo entre disparos
+        public GameObject Balaprefa;  // Prefab del proyectil
+        public float velBala = 20f;  // Velocidad del proyectil
 
         private Transform targetEnemy;
         private float nextFireTime = 0f;
@@ -24,7 +24,7 @@ public class Disparo : MonoBehaviour
 
     void Update()
         {
-            if (Input.GetMouseButton(1))  // Clic derecho
+            if (Input.GetMouseButton(0))  // Clic Izquierdo
             {
                 animator.SetBool("Disparando", true);
                 FindClosestEnemy();
@@ -34,11 +34,11 @@ public class Disparo : MonoBehaviour
                     if (Time.time >= nextFireTime)
                     {
                         Shoot();
-                        nextFireTime = Time.time + fireRate;
+                        nextFireTime = Time.time + TimeDisparo;
                     }
                 }
             }
-            if (Input.GetMouseButtonUp(1))
+            if (Input.GetMouseButtonUp(0))
             {
             animator.SetBool("Disparando", false);
 
@@ -71,15 +71,15 @@ public class Disparo : MonoBehaviour
 
         void Shoot()
         {
-            if (projectilePrefab != null && weaponTransform != null)
+            if (Balaprefa != null && weaponTransform != null)
             {
                 // Instancia el proyectil en el punto de disparo y orientado en la dirección recta del arma
-                GameObject projectile = Instantiate(projectilePrefab, weaponTransform.position, weaponTransform.rotation);
+                GameObject projectile = Instantiate(Balaprefa, weaponTransform.position, weaponTransform.rotation);
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
                 if (rb != null)
                 {
-                    rb.velocity = -weaponTransform.forward * projectileSpeed;  // Dispara en la dirección de weaponTransform
+                    rb.velocity = -weaponTransform.forward * velBala;  // Dispara en la dirección de weaponTransform
                 }
             }
         }
