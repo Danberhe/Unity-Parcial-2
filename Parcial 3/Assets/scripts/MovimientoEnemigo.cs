@@ -108,7 +108,7 @@ public class MovimientoEnemigo : MonoBehaviour
         anim.SetBool("Muerte", true);
 
         agent.isStopped = true;
-        agent.enabled = false;
+
 
 
     }
