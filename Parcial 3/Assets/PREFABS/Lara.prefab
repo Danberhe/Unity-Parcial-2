@@ -354,8 +354,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8255259124393778889}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000027939677, y: 0.000000014901161, z: -0.000000007450581, w: 1}
-  m_LocalPosition: {x: 0.009, y: -0.204, z: -0.137}
+  m_LocalRotation: {x: 0.00000002142042, y: -0.00000022351742, z: 0.00000009685755, w: 1}
+  m_LocalPosition: {x: 0.009000078, y: -0.20400019, z: -0.13700014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -670,9 +670,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   weaponTransform: {fileID: 4072376933756783041}
-  fireRate: 1.63
-  projectilePrefab: {fileID: 300982355324469513, guid: 906808fc810ae6540b8eaf3781b8f32a, type: 3}
-  projectileSpeed: 100
+  TimeDisparo: 0.5
+  Balaprefa: {fileID: 0}
+  velBala: 20
 --- !u!4 &8850767755389611072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 52eab2797690b874bb3314f416876f89, type: 3}

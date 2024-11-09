@@ -16,6 +16,8 @@ public class Disparo : MonoBehaviour
         private float nextFireTime = 0f;
         private Animator animator;
 
+        public static bool apuntando;
+
 
     void Awake()
     {
@@ -24,21 +26,30 @@ public class Disparo : MonoBehaviour
 
     void Update()
         {
-            if (Input.GetMouseButton(0))  // Clic Izquierdo
+        apuntando = Input.GetMouseButton(1);
+
+        if (apuntando)
             {
-                animator.SetBool("Disparando", true);
                 FindClosestEnemy();
                 if (targetEnemy != null)
                 {
                     AimAtTarget();
-                    if (Time.time >= nextFireTime)
-                    {
-                        Shoot();
-                        nextFireTime = Time.time + TimeDisparo;
-                    }
+                    
                 }
             }
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButton(0))  // Activar animación inmediatamente al hacer clic
+            {
+            animator.SetBool("Disparando", true);
+            }
+
+            if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+            {
+            Shoot();
+            nextFireTime = Time.time + TimeDisparo;
+            }
+
+
+        if (Input.GetMouseButtonUp(0))
             {
             animator.SetBool("Disparando", false);
 
@@ -66,7 +77,7 @@ public class Disparo : MonoBehaviour
         {
             Vector3 directionToTarget = targetEnemy.position - transform.position;
             Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
         }
 
         void Shoot()

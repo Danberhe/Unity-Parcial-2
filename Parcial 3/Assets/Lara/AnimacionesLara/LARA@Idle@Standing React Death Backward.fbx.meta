@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08463dd68b5922644bb2367637d9d07c
+guid: 823913d1357f3304c8b372743bc07b28
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Disparando
+      name: Idle@Standing React Death Backward
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 15
-      lastFrame: 35
+      firstFrame: 5
+      lastFrame: 109
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

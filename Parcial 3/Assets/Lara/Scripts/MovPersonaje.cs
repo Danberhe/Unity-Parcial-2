@@ -8,7 +8,10 @@ public class MovPersonaje : MonoBehaviour
     public float VeloRot = 200.0f; //Definimos la velocidad de rotacion del personaje
     private Animator animator;
     public float x, y;
+
+
     public float salud = 200f;
+    public float TiempoMuerte = 2.0f;
 
 
 
@@ -25,14 +28,17 @@ public class MovPersonaje : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Rotate(0, x * Time.deltaTime * VeloRot, 0);
-        transform.Translate(0, 0, y * Time.deltaTime * VeloMov);
+        if (!Disparo.apuntando)  // Solo mover y rotar si no está apuntando
+        {
+            transform.Rotate(0, x * Time.deltaTime * VeloRot, 0);
+            transform.Translate(0, 0, y * Time.deltaTime * VeloMov);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ArmaController.apuntando == false)
+        if (!Disparo.apuntando)
         {
 
 
@@ -60,6 +66,7 @@ public class MovPersonaje : MonoBehaviour
         {
             Debug.Log("LILI HA MUERTO");
             Muerte();
+
             
         }
     }
@@ -70,6 +77,15 @@ public class MovPersonaje : MonoBehaviour
     {
         Debug.Log("Has Muerto");
         animator.SetBool("Muerte", true);
+
+        StartCoroutine(waitAnim());
+    }
+
+    private IEnumerator waitAnim()
+    {
+        yield return new WaitForSeconds(TiempoMuerte);
+
+        Destroy(gameObject);
     }
 
 

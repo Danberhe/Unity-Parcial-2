@@ -70,8 +70,10 @@ public class MovimientoEnemigo : MonoBehaviour
             anim.SetBool("atacar", true);
             agent.destination = transform.position;
             agent.isStopped = true; // Pausar el movimiento
-            
             StartCoroutine(waitAnim());
+            
+            
+            
             atacando = true;
 
         }
@@ -79,11 +81,15 @@ public class MovimientoEnemigo : MonoBehaviour
 
     private IEnumerator waitAnim()
     {
-        Debug.Log("ESPRANDO");
+        
         yield return new WaitForSeconds(2.12f);
         agent.isStopped = false; // Reanudar el movimiento
-      
+
     }
+
+
+
+
     //BAJAR VIDA
     public void getDamage(int dmg)
     {
@@ -99,8 +105,11 @@ public class MovimientoEnemigo : MonoBehaviour
 
     public void Muerte(){
         Debug.Log("Has Muerto");
-        anim.SetBool("Muerte", true);  
-        
+        anim.SetBool("Muerte", true);
+
+        agent.isStopped = true;
+        agent.enabled = false;
+
 
     }
 
