@@ -81,7 +81,6 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-<<<<<<< Updated upstream
     human:
     - boneName: mixamorig:Hips
       humanName: Hips
@@ -886,10 +885,6 @@ ModelImporter:
       position: {x: 1.3322676e-17, y: 0.110685, z: -1.4108506e-16}
       rotation: {x: -0, y: -0.0000000018626447, z: -9.3132235e-10, w: 1}
       scale: {x: 1.0000001, y: 0.99999994, z: 0.99999976}
-=======
-    human: []
-    skeleton: []
->>>>>>> Stashed changes
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
