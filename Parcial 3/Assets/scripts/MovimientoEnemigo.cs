@@ -43,7 +43,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Player"))    
         {
             if(salud < 0){
                 salud = 0;
@@ -81,7 +81,10 @@ public class MovimientoEnemigo : MonoBehaviour
 
     private IEnumerator waitAnim()
     {
+<<<<<<< Updated upstream
         
+=======
+>>>>>>> Stashed changes
         yield return new WaitForSeconds(2.12f);
         agent.isStopped = false; // Reanudar el movimiento
 
@@ -125,6 +128,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
         if (other.CompareTag("Player") && atacando)
         {
+            Debug.Log("Deberia atacar");
             other.GetComponent<MovPersonaje>().getDamage(damageGolpe);
         }
     }
