@@ -9,7 +9,7 @@ public class CameraRegister : MonoBehaviour
     {
         CameraSwitcher.Register(GetComponent<CinemachineVirtualCamera>());
     }
-    private void OnDosable()
+    private void OnDisable()
     {
         CameraSwitcher.Unregister(GetComponent<CinemachineVirtualCamera>());
     }

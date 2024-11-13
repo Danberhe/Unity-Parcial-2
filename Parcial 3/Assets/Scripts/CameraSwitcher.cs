@@ -22,7 +22,10 @@ public class CameraSwitcher
 
         foreach (CinemachineVirtualCamera c in cameras)
         {
-            c.Priority = 0;
+            if (c != camera && c.Priority != 0)
+            {
+                c.Priority = 0;
+            }
         }
     }
 

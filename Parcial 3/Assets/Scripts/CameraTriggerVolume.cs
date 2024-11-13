@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+[RequireComponent(typeof(BoxCollider))]
+
 public class CamTrigger : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera cam;
     [SerializeField] private Vector3 boxSize;
 
     BoxCollider box;
-    Rigidbody rb;
 
     private void Awake()
     {
         box = GetComponent<BoxCollider>();
-        rb = GetComponent<Rigidbody>();
-        box.isTrigger = true;
+        box.isTrigger = true; // Ensure this is set as a trigger
         box.size = boxSize;
-
-        rb.isKinematic = true;
     }
 
     private void OnDrawGizmos()
@@ -29,10 +27,18 @@ public class CamTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        // Check if the other collider belongs to the player
+        if (other.CompareTag("Player"))
         {
-            if(CameraSwitcher.ActiveCamera != cam) CameraSwitcher.SwitchCamera(cam);
+            // Optionally check if the player has a Rigidbody if that's required
+            if (other.GetComponent<Rigidbody>() != null)
+            {
+                // Switch to this camera if it's not already active
+                if (CameraSwitcher.ActiveCamera != cam)
+                {
+                    CameraSwitcher.SwitchCamera(cam);
+                }
+            }
         }
     }
-
 }
