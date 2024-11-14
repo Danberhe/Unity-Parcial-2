@@ -10,24 +10,12 @@ public class MovimientoEnemigo : MonoBehaviour
     public Animator anim;
 
     public float rango;
-
     public bool atacando;
-
     private bool persiguiendo = false;
     
-
-
-    //para atacar(Animacion)
-    /*[SerializeField] private Transform controlGolpe;
-    [SerializeField] private float radioGolpe;*/
-    
-    
-
-
     //para atacar(quitar vida)
     public float salud = 150f;
     public int damageGolpe;
-   
 
     void Awake()
     {
@@ -38,7 +26,6 @@ public class MovimientoEnemigo : MonoBehaviour
     void Start()
     {
         agent.enabled = false; // Desactivamos el NavMeshAgent al inicio
-        
     }
 
     void Update()
@@ -48,10 +35,7 @@ public class MovimientoEnemigo : MonoBehaviour
             if(salud < 0){
                 salud = 0;
             }
-            //vida.text = salud.ToString() + "%";
         }
-        
-        
         if (persiguiendo)
         {
             PerseguirJugador();
@@ -72,8 +56,7 @@ public class MovimientoEnemigo : MonoBehaviour
             agent.isStopped = true; // Pausar el movimiento
             StartCoroutine(waitAnim());
             
-            
-            
+        
             atacando = true;
 
         }
@@ -81,17 +64,13 @@ public class MovimientoEnemigo : MonoBehaviour
 
     private IEnumerator waitAnim()
     {
-        
         yield return new WaitForSeconds(2.12f);
         agent.isStopped = false; // Reanudar el movimiento
-
     }
 
 
-
-
     //BAJAR VIDA
-    public void getDamage(int dmg)
+    public void getDamageZ(int dmg)
     {
         salud -= dmg;
         Debug.Log("Rebajó" + dmg + "de vida." + dmg + "/" + salud);
@@ -102,15 +81,11 @@ public class MovimientoEnemigo : MonoBehaviour
         }
     }
 
-
     public void Muerte(){
-        Debug.Log("Has Muerto");
+        Debug.Log("Zombie ha Muerto");
         anim.SetBool("Muerte", true);
 
         agent.isStopped = true;
-
-
-
     }
 
 
@@ -125,89 +100,8 @@ public class MovimientoEnemigo : MonoBehaviour
 
         if (other.CompareTag("Player") && atacando)
         {
-            other.GetComponent<MovPersonaje>().getDamage(damageGolpe);
+            other.GetComponent<MovPersonaje>().getDamageP(damageGolpe);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*public void Ataque(){
-
-        Collider[] enemigo = Physics.OverlapCircleAll(controlGolpe.position, radioGolpe);
-
-        if (enemigo.CompareTag("Player"))
-        {
-            enemigo.transform.GetComponent<PlayerManager>().getDamage(damageGolpe);
-        }
-
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(controlGolpe.position, radioGolpe);
-    }*/
-
-
-
-
-
-    public void Final_Anim(){
-
-        anim.SetBool("atacar", false); 
-        atacando = false;
-    }
-
-    //en el personaje debe ir el siguiente metodo
-
-    /*void OnTriggerEnter(Collider coll){
-        if(coll.CompareTag("ataque")){
-
-            print("Daño");
-        }
-    }*/
-
-
-    
-
-    // Método para detectar cuando el jugador sale del rango del enemigo
-
-    /*private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Jugador fuera del rango. Deteniendo persecución.");
-            persiguiendo = false;
-            agent.enabled = false; // Desactivamos el NavMeshAgent
-            // anim.SetBool("walk", false);
-        }
-    }*/
     
 }

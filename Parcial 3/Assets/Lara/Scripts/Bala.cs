@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-    public int daño = 10;  // Cantidad de daño que hace la bala
+    public int dano = 10;  // Cantidad de dao que hace la bala
 
     private void OnTriggerEnter(Collider other)
     {
         // Comprueba si la bala colisiona con el enemigo
         if (other.CompareTag("Enemy"))
         {
-            // Busca el script del enemigo y llama a la función getDamage
+            // Busca el script del enemigo y llama a la funcin getDamage
             MovimientoEnemigo enemigo = other.GetComponent<MovimientoEnemigo>();
             if (enemigo != null)
             {
-                enemigo.getDamage(daño);  // Aplica el daño al enemigo
+                enemigo.getDamageZ(dano);  // Aplica el dano al enemigo
             }
 
-            // Destruye la bala después de colisionar
+            // Destruye la bala despus de colisionar
             Destroy(gameObject);
         }
     }
