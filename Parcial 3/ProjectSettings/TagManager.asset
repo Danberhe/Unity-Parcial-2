@@ -13,9 +13,9 @@ TagManager:
   - Enemy
   - Water
   - UI
+  - Jugador
   - 
-  - 
-  - 
+  - Item
   - PP
   - Piso
   - 

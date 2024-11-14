@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombieGirl
       objectReference: {fileID: 0}
+    - target: {fileID: 1597571138863784301, guid: 1753542b611b13243af036f4ab56e1f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5012188923343470758, guid: 1753542b611b13243af036f4ab56e1f3, type: 3}
       propertyPath: player
       value: 
@@ -2160,7 +2164,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -4047,8 +4051,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1846195306978115530, guid: 91ced1bea03372e4c8d4bb4f6cff09cf, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097168577144007650, guid: 91ced1bea03372e4c8d4bb4f6cff09cf, type: 3}
+      propertyPath: VeloMov
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4097168577144007650, guid: 91ced1bea03372e4c8d4bb4f6cff09cf, type: 3}
+      propertyPath: controlador
+      value: 
+      objectReference: {fileID: 603220829}
     - target: {fileID: 8187525215237633786, guid: 91ced1bea03372e4c8d4bb4f6cff09cf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4109,7 +4121,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7080661686014991161, guid: 91ced1bea03372e4c8d4bb4f6cff09cf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -5466,6 +5479,11 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!143 &603220829 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 8715665357596012593, guid: 91ced1bea03372e4c8d4bb4f6cff09cf, type: 3}
+  m_PrefabInstance: {fileID: 363938318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &608051017
 GameObject:
   m_ObjectHideFlags: 0
@@ -6717,7 +6735,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -6840,6 +6858,10 @@ PrefabInstance:
     - target: {fileID: 1967706024250453972, guid: 7e50149afc24da741ba08f5bb050eefa, type: 3}
       propertyPath: m_Name
       value: zombiePolice
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967706024250453972, guid: 7e50149afc24da741ba08f5bb050eefa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993092631408324011, guid: 7e50149afc24da741ba08f5bb050eefa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11269,7 +11291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8048577520366205125, guid: acedb7b3711c4a247b8400d996cee135, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8051378063955501792, guid: acedb7b3711c4a247b8400d996cee135, type: 3}
       propertyPath: m_Layer
@@ -12915,7 +12937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4886981936686128580, guid: fae1528db4c3a64408e925c82eb9d9c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.54
+      value: -3.27
       objectReference: {fileID: 0}
     - target: {fileID: 4886981936686128580, guid: fae1528db4c3a64408e925c82eb9d9c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12923,7 +12945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4886981936686128580, guid: fae1528db4c3a64408e925c82eb9d9c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.67
+      value: 20.64
       objectReference: {fileID: 0}
     - target: {fileID: 4886981936686128580, guid: fae1528db4c3a64408e925c82eb9d9c4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18225,7 +18247,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -19048,7 +19070,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -36516,7 +36538,6 @@ SceneRoots:
   - {fileID: 2095778829}
   - {fileID: 936841077}
   - {fileID: 543450653022603597}
-  - {fileID: 1397209598}
   - {fileID: 222564337}
   - {fileID: 1139980204}
   - {fileID: 1678981248}
@@ -36531,3 +36552,4 @@ SceneRoots:
   - {fileID: 564029829}
   - {fileID: 1419559775}
   - {fileID: 363938318}
+  - {fileID: 1397209598}

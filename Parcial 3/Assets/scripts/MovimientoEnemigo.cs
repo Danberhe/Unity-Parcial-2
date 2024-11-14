@@ -45,27 +45,38 @@ public class MovimientoEnemigo : MonoBehaviour
     private void PerseguirJugador()
     {
         if(Vector3.Distance(transform.position, player.transform.position) > rango){
+            
             agent.destination = player.position;
             anim.SetBool("Walk", true);
             anim.SetBool("atacar", false); 
             atacando = false;
         }else{
             Debug.Log("ENTRO A UNA DISTANCIA MENOR");
-            anim.SetBool("atacar", true);
-            agent.destination = transform.position;
             agent.isStopped = true; // Pausar el movimiento
+            anim.SetBool("atacar", true);
+            //atacando = true;
+            agent.destination = transform.position;
             StartCoroutine(waitAnim());
             
+            
+            
+            
         
-            atacando = true;
+            
 
         }
     }
 
     private IEnumerator waitAnim()
     {
+        
         yield return new WaitForSeconds(2.12f);
+        atacando = true;
         agent.isStopped = false; // Reanudar el movimiento
+        //agent.speed = 0;
+        
+        
+        
     }
 
 
@@ -102,6 +113,7 @@ public class MovimientoEnemigo : MonoBehaviour
         {
             other.GetComponent<MovPersonaje>().getDamageP(damageGolpe);
         }
+
     }
     
 }

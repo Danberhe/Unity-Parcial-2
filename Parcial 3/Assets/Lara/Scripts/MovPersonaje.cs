@@ -32,6 +32,8 @@ public class MovPersonaje : MonoBehaviour
             transform.Rotate(0, x * Time.deltaTime * VeloRot, 0);
             transform.Translate(0, 0, y * Time.deltaTime * VeloMov);
         }
+
+
     }
     // Update is called once per frame
     void Update()
