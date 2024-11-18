@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class Disparo : MonoBehaviour
 {
+    public Transform weaponTransform;
+    public float TimeDisparo = 0.5f; // Tiempo entre disparos
+    public GameObject Balaprefa; // Prefab del proyectil
+    public float velBala = 20f; // Velocidad del proyectil
 
-        public float detectionRadius = 10f;
-        public LayerMask enemyLayer;
-        public Transform weaponTransform;  
-        public float TimeDisparo = 0.5f;      // Tiempo entre disparos
-        public GameObject Balaprefa;  // Prefab del proyectil
-        public float velBala = 20f;  // Velocidad del proyectil
+    private float nextFireTime = 0f;
+    private Animator animator;
 
-        private Transform targetEnemy;
-        private float nextFireTime = 0f;
-        private Animator animator;
-
-        public static bool apuntando;
-
-        public AudioSource sinBala;
-        
-
+    public AudioSource sinBala;
 
     void Awake()
     {
@@ -28,83 +20,41 @@ public class Disparo : MonoBehaviour
     }
 
     void Update()
+    {
+        // Detectar disparo al hacer clic izquierdo
+        if (Input.GetMouseButton(0))
         {
-        apuntando = Input.GetMouseButton(1);
-
-        if (apuntando)
-            {
-                FindClosestEnemy();
-                if (targetEnemy != null)
-                {
-                    AimAtTarget();
-                    
-                }
-            }
-            if (Input.GetMouseButton(0))  // Activar animacion inmediatamente al hacer clic
-            {
+            // Activar animación de disparo
             animator.SetBool("Disparando", true);
-            }
 
-            if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+            // Verificar si es el momento de disparar
+            if (Time.time >= nextFireTime)
             {
-            Shoot();
-            nextFireTime = Time.time + TimeDisparo;
+                Shoot();
+                nextFireTime = Time.time + TimeDisparo;
             }
-
-
-        if (Input.GetMouseButtonUp(0))
-            {
+        }
+        else
+        {
+            // Detener la animación si no se está disparando
             animator.SetBool("Disparando", false);
-
-            }
+        }
     }
 
-        void FindClosestEnemy()
+    void Shoot()
+    {
+        if (Balaprefa != null && weaponTransform != null) // Asegúrate de que haya un prefab asignado
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);
-            float closestDistance = Mathf.Infinity;
-            targetEnemy = null;
+            // Instanciar el proyectil en el punto de disparo y orientado según la rotación actual del arma
+            GameObject projectile = Instantiate(Balaprefa, weaponTransform.position, weaponTransform.rotation);
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
-            foreach (Collider collider in hitColliders)
+            if (rb != null)
             {
-                float distance = Vector3.Distance(transform.position, collider.transform.position);
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    targetEnemy = collider.transform;
-                }
+                rb.velocity = -weaponTransform.forward * velBala; // Proyectil viaja hacia adelante
             }
         }
-
-        void AimAtTarget()
-        {
-            Vector3 directionToTarget = targetEnemy.position - transform.position;
-            Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
-        }
-
-        void Shoot()
-        {
-            if (Balaprefa != null && weaponTransform != null /*& si hay balas en la pistola*/)
-            {
-                // Instancia el proyectil en el punto de disparo y orientado en la direcci�n recta del arma
-                GameObject projectile = Instantiate(Balaprefa, weaponTransform.position, weaponTransform.rotation);
-                
-                Rigidbody rb = projectile.GetComponent<Rigidbody>();
-
-                if (rb != null)
-                {
-                    rb.velocity = -weaponTransform.forward * velBala;  // Dispara en la direcci�n de weaponTransform
-                }
-            }else{
-
-                //si no hay balas en la pistola
-                //sinBala.Play();
-            }
-        }
-    
-
-
-
-
+        
+    }
 }
+
