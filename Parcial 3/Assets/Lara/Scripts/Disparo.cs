@@ -18,6 +18,9 @@ public class Disparo : MonoBehaviour
 
         public static bool apuntando;
 
+        public AudioSource sinBala;
+        
+
 
     void Awake()
     {
@@ -37,7 +40,7 @@ public class Disparo : MonoBehaviour
                     
                 }
             }
-            if (Input.GetMouseButton(0))  // Activar animación inmediatamente al hacer clic
+            if (Input.GetMouseButton(0))  // Activar animacion inmediatamente al hacer clic
             {
             animator.SetBool("Disparando", true);
             }
@@ -82,16 +85,21 @@ public class Disparo : MonoBehaviour
 
         void Shoot()
         {
-            if (Balaprefa != null && weaponTransform != null)
+            if (Balaprefa != null && weaponTransform != null /*& si hay balas en la pistola*/)
             {
-                // Instancia el proyectil en el punto de disparo y orientado en la dirección recta del arma
+                // Instancia el proyectil en el punto de disparo y orientado en la direcciï¿½n recta del arma
                 GameObject projectile = Instantiate(Balaprefa, weaponTransform.position, weaponTransform.rotation);
+                
                 Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
                 if (rb != null)
                 {
-                    rb.velocity = -weaponTransform.forward * velBala;  // Dispara en la dirección de weaponTransform
+                    rb.velocity = -weaponTransform.forward * velBala;  // Dispara en la direcciï¿½n de weaponTransform
                 }
+            }else{
+
+                //si no hay balas en la pistola
+                //sinBala.Play();
             }
         }
     

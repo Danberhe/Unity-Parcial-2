@@ -13,6 +13,8 @@ public class MovimientoEnemigo : MonoBehaviour
     public float rango;
 
     public AudioSource sonido;
+
+    public CapsuleCollider col;
     
 
     //private bool persiguiendo = false;
@@ -99,23 +101,23 @@ public class MovimientoEnemigo : MonoBehaviour
 
     public void Muerte()
     {
+        if (col != null)
+        {
+            col.enabled = false;   // Desactivar el collider
+        }
         Debug.Log("Ha Muerto zombie");
         anim.SetBool("Muerte", true);
 
         agent.isStopped = true;
+
         sonido.Pause();
+        this.enabled = false;
+        
 
     }
     // Método para detectar cuando el jugador entra al rangos del enemigo
     private void OnTriggerEnter(Collider other)
     {
-
-        /*if (other.CompareTag("Player"))
-        if (Distancia < 30)
-        {
-            persiguiendo = true;
-            agent.enabled = true; // Activamos el NavMeshAgent para que persiga
-        }*/
 
         if (other.CompareTag("Player") /*&& atacando*/)
         {

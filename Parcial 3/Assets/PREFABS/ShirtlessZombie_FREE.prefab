@@ -1244,7 +1244,7 @@ Transform:
   m_GameObject: {fileID: 3124631433757203182}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0992813, y: -0.046733655, z: 0.9093881}
+  m_LocalPosition: {x: -0.01, y: 0.648, z: -0.024}
   m_LocalScale: {x: 0.897534, y: 0.897534, z: 0.897534}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3213,7 +3213,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   rango: 1
   sonido: {fileID: 66298653168708063}
-  salud: 150
+  col: {fileID: 8876029503199757683}
+  salud: 70
   damageGolpe: 25
 --- !u!136 &8876029503199757683
 CapsuleCollider:
@@ -3237,7 +3238,7 @@ CapsuleCollider:
   m_Radius: 0.27
   m_Height: 1.09
   m_Direction: 1
-  m_Center: {x: 0, y: 1.14, z: 0}
+  m_Center: {x: 0, y: 1.01, z: 0}
 --- !u!54 &6352243424460393779
 Rigidbody:
   m_ObjectHideFlags: 0

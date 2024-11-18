@@ -913,7 +913,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   rango: 0.78
   sonido: {fileID: 5576027195256054146}
-  salud: 150
+  col: {fileID: 8882669798752244633}
+  salud: 90
   damageGolpe: 25
 --- !u!136 &8882669798752244633
 CapsuleCollider:
@@ -937,7 +938,7 @@ CapsuleCollider:
   m_Radius: 0.27
   m_Height: 1.13
   m_Direction: 1
-  m_Center: {x: 0, y: 0.98, z: 0}
+  m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!54 &2897054090535038606
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2268,7 +2269,7 @@ Transform:
   m_GameObject: {fileID: 7096336405079371870}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07000017, y: 0.33192283, z: -0.120000295}
+  m_LocalPosition: {x: 0.031, y: 0.807, z: -0.120000295}
   m_LocalScale: {x: 0.72483224, y: 0.72483224, z: 0.72483224}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2286,7 +2287,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9af0e7da77021c743a79a018d9a2ae6f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
