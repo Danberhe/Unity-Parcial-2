@@ -29,16 +29,11 @@ public class CamTrigger : MonoBehaviour
     {
         // Check if the other collider belongs to the player
         if (other.CompareTag("Player"))
-        {
-            // Optionally check if the player has a Rigidbody if that's required
-            if (other.GetComponent<Rigidbody>() != null)
-            {
-                // Switch to this camera if it's not already active
-                if (CameraSwitcher.ActiveCamera != cam)
+        {if (CameraSwitcher.ActiveCamera != cam)
                 {
                     CameraSwitcher.SwitchCamera(cam);
                 }
             }
-        }
+        
     }
 }
