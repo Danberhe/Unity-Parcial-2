@@ -108,7 +108,7 @@ public class MovimientoEnemigo : MonoBehaviour
         Debug.Log("Ha Muerto zombie");
         anim.SetBool("Muerte", true);
 
-        agent.isStopped = true;
+        //agent.isStopped = true;
 
         sonido.Pause();
         this.enabled = false;

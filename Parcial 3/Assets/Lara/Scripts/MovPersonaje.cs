@@ -70,15 +70,8 @@ public class MovPersonaje : MonoBehaviour
     {
         Debug.Log("Has Muerto");
         animator.SetBool("Muerte", true);
-
-        StartCoroutine(waitAnim());
+        this.enabled=false;
     }
 
-    private IEnumerator waitAnim()
-    {
-        yield return new WaitForSeconds(TiempoMuerte);
-
-        Destroy(gameObject);
-    }
 }
 
