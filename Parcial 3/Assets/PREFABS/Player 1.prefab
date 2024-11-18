@@ -5207,7 +5207,7 @@ MonoBehaviour:
   x: 0
   y: 0
   gravedad: -9.8
-  salud: 50
+  salud: 100
   TiempoMuerte: 2
   controlador: {fileID: 8715665357596012593}
 --- !u!143 &8715665357596012593
