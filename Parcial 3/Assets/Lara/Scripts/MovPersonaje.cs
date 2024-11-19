@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovPersonaje : MonoBehaviour
 {
+    public Disparo disparoScript; 
+    
     public float VeloMov = 5.0f; // Velocidad del movimiento del personaje
     public float VeloRot = 200.0f; // Velocidad de rotación del personaje
     public float x, y;
@@ -26,6 +28,7 @@ public class MovPersonaje : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
+        disparoScript = GetComponent<Disparo>(); // es pa obtener el componente disparo
     }
 
     void Update()
@@ -65,6 +68,7 @@ public class MovPersonaje : MonoBehaviour
         Debug.Log("Has Muerto");
         animator.SetBool("Muerte", true);
         this.enabled = false;
+        disparoScript.enabled = false;
     }
 }
 
