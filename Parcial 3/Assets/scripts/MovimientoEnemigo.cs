@@ -13,6 +13,8 @@ public class MovimientoEnemigo : MonoBehaviour
     public float rango;
 
     public AudioSource sonido;
+    
+
 
     public CapsuleCollider col;
     

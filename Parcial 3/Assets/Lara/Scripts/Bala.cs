@@ -8,7 +8,8 @@ public class Bala : MonoBehaviour
 
     public AudioSource disparado;
 
-    
+    public AudioSource efectoDisparo;
+
 
     void Start()
     {
@@ -25,22 +26,18 @@ public class Bala : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Comprueba si la bala colisiona con el enemigo
-        Debug.Log("BALA CONTACTA");
-        //if (other.CompareTag("Enemy"))
-        //{
-            
-            // Busca el script del enemigo y llama a la funcin getDamage
-            MovimientoEnemigo enemigo = other.GetComponent<MovimientoEnemigo>();
-            
-            if (enemigo != null)
-            {
-                enemigo.getDamageZ(dano);  // Aplica el dano al enemigo
+        MovimientoEnemigo enemigo = other.GetComponent<MovimientoEnemigo>();
+        if (enemigo != null)
+        {
+            enemigo.getDamageZ(dano);  // Aplica el damage
+            Debug.Log("efectoooooooooooooooooooooooooooooooooooooooooooooooo");
+            efectoDisparo.Play();
+
                 
-            }
+        }
             
-            // Destruye la bala despus de colisionar
-            Destroy(gameObject,2);
-        //}
+           
+        Destroy(gameObject,2);
+        
     }
 }
