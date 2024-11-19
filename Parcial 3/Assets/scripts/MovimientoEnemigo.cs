@@ -14,7 +14,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
     public AudioSource sonido;
     
-
+    public float rangoAtacando = 8f;
 
     public CapsuleCollider col;
     
@@ -51,7 +51,7 @@ public class MovimientoEnemigo : MonoBehaviour
             }
         }
 
-        if (Distancia < 8)
+        if (Distancia < rangoAtacando)
         {
             //persiguiendo = true;
             agent.enabled = true; // Activamos el NavMeshAgent para que persiga
@@ -110,7 +110,7 @@ public class MovimientoEnemigo : MonoBehaviour
         Debug.Log("Ha Muerto zombie");
         anim.SetBool("Muerte", true);
 
-        //agent.isStopped = true;
+        agent.isStopped = true;
 
         sonido.Pause();
         this.enabled = false;

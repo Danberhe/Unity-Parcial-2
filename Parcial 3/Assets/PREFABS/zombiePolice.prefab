@@ -885,7 +885,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 3.3
+  m_Speed: 2.8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -913,8 +913,9 @@ MonoBehaviour:
   anim: {fileID: 0}
   rango: 0.78
   sonido: {fileID: 5576027195256054146}
+  rangoAtacando: 8
   col: {fileID: 8882669798752244633}
-  salud: 90
+  salud: 45
   damageGolpe: 25
 --- !u!136 &8882669798752244633
 CapsuleCollider:
@@ -935,7 +936,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.27
+  m_Radius: 0.33
   m_Height: 1.13
   m_Direction: 1
   m_Center: {x: 0, y: 0.99, z: 0}

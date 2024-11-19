@@ -20,7 +20,7 @@ public class Bala : MonoBehaviour
     void Update()
     {
 
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 1.5f);
     }
 
 
@@ -37,7 +37,7 @@ public class Bala : MonoBehaviour
         }
             
            
-        Destroy(gameObject,2);
+        Destroy(gameObject, 0.3f);
         
     }
 }
