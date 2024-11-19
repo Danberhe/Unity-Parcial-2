@@ -14,8 +14,14 @@ public class MovPersonaje : MonoBehaviour
     public float salud = 200f;
     public float TiempoMuerte = 2.0f;
 
+    public AudioSource MusicaFondo;
+
     public CharacterController controlador;
 
+    void Start(){
+        MusicaFondo.Play();
+    }
+    
     void Awake()
     {
         animator = GetComponent<Animator>();
