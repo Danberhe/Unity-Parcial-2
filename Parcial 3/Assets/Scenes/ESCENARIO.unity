@@ -12446,6 +12446,10 @@ PrefabInstance:
       propertyPath: Balaprefa
       value: 
       objectReference: {fileID: 3669417072189574256, guid: 59cf06502cb125142b41c213140be8ff, type: 3}
+    - target: {fileID: 4097168577144007650, guid: d4bd93e23dad10b43829e2cdc8c4c16e, type: 3}
+      propertyPath: VeloMov
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8187525215237633786, guid: d4bd93e23dad10b43829e2cdc8c4c16e, type: 3}
       propertyPath: m_Name
       value: Player 1 (1)
