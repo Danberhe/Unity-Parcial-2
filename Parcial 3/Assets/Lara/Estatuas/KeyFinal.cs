@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Para trabajar con UI (o usa TMPro si prefieres)
 
-using UnityEngine;
 
-using UnityEngine;
 
 public class KeyFinal : MonoBehaviour
 {
     public GameObject objetoLlave; // Llave física en el mundo
     public GameObject[] ColliderPuerta; // Puertas que se activarán
+    public AudioClip sonidoLlave; // Clip de sonido para la llave
+    private AudioSource audioSource; // Fuente de audio para reproducir el sonido
     private bool llaveRecogida = false; // Para evitar múltiples activaciones
 
     void Start()
@@ -18,6 +19,13 @@ public class KeyFinal : MonoBehaviour
         if (objetoLlave != null)
         {
             objetoLlave.SetActive(false);
+        }
+
+        // Añadir o buscar un componente AudioSource en el objeto
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
     }
 
@@ -36,6 +44,12 @@ public class KeyFinal : MonoBehaviour
                 }
             }
 
+            // Reproducir sonido de la llave si el clip está asignado
+            if (sonidoLlave != null)
+            {
+                audioSource.PlayOneShot(sonidoLlave);
+            }
+
             // "Recoge" la llave simulando que pasa al inventario
             if (objetoLlave != null)
             {
@@ -45,6 +59,5 @@ public class KeyFinal : MonoBehaviour
         }
     }
 }
-
 
 
