@@ -15,6 +15,7 @@ public class MovPersonaje : MonoBehaviour
     public float TiempoMuerte = 2.0f;
 
     public AudioSource MusicaFondo;
+    public AudioSource golpeada;
 
     public CharacterController controlador;
 
@@ -49,6 +50,7 @@ public class MovPersonaje : MonoBehaviour
     public void getDamageP(int dmg)
     {
         salud -= dmg;
+        golpeada.Play();
         salud = Mathf.Max(salud, 0); // Asegura que la salud no sea negativa
         Debug.Log("Zombie quitó : " + dmg + " de vida." + salud + "/ 200");
         if (salud <= 0)
