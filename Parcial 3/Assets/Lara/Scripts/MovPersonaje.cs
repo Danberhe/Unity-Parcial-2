@@ -25,7 +25,7 @@ public class MovPersonaje : MonoBehaviour
     //items
     public ItemsManager itemsManager;
 
-    public float salud = 200f;
+    public float salud = 400f;
  
 
     public Text indSalud;
@@ -33,6 +33,7 @@ public class MovPersonaje : MonoBehaviour
 
     void Start(){
         MusicaFondo.Play();
+        indSalud.text = "HOLA";
     }
     
     void Awake()
@@ -44,6 +45,7 @@ public class MovPersonaje : MonoBehaviour
     void Update()
     {
         indSalud.text = "Salud: " + salud.ToString() + " / 500";
+        //indSalud.text = "";
         
         
         // Movimiento y rotación del personaje según las entradas del jugador
@@ -63,12 +65,18 @@ public class MovPersonaje : MonoBehaviour
         transform.Rotate(0, x * Time.deltaTime * VeloRot, 0);
     }
 
-    public void getDamageP(int dmg)
+    public IEnumerator getDamageP(int dmg)
     {
         salud -= dmg;
+        
+        //aca espera 2 segundos
         golpeada.Play();
         salud = Mathf.Max(salud, 0); // Asegura que la salud no sea negativa
+        
         Debug.Log("Zombie quitó : " + dmg + " de vida." + salud + "/ 200");
+        indSalud.text = "Salud: " + salud.ToString() + " / 400";
+        yield return new WaitForSeconds(2f);
+        indSalud.text = "";
         if (salud <= 0)
         {
             Debug.Log("LILI HA MUERTO");
@@ -89,7 +97,7 @@ public class MovPersonaje : MonoBehaviour
         if (collision.tag == "pildora")
         {
             Debug.Log("entro a pildoras");
-            StartCoroutine(itemsManager.efectPildora(ref salud));
+            StartCoroutine(itemsManager.efectPildora(this));
             //ItemsManager.Instance.StartCoroutine(efectPildora(salud));
             Destroy(collision.gameObject);
 

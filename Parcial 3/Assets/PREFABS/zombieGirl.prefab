@@ -410,6 +410,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   rango: 0.6
   sonido: {fileID: 6649992995821670065}
+  rangoAtacando: 8
   col: {fileID: 3291224840222562012}
   salud: 40
   damageGolpe: 15
@@ -507,7 +508,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 154e11d4285a15f47842e63575ed567d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0

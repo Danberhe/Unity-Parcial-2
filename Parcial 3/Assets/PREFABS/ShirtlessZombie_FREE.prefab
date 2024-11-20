@@ -1262,7 +1262,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d673c8b9d2dab7d4f90ea1c086c559d7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3213,6 +3213,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   rango: 1
   sonido: {fileID: 66298653168708063}
+  rangoAtacando: 8
   col: {fileID: 8876029503199757683}
   salud: 40
   damageGolpe: 25

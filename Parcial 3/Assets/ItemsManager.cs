@@ -15,11 +15,11 @@ public class ItemsManager : MonoBehaviour
         info.text = "";
     }
 
-    public IEnumerator efectPildora(float health)
+    public IEnumerator efectPildora(MovPersonaje personaje)
     {
-        health = health + 25;
+        personaje.salud += 25;
         //Destroy(gameObject);
-        info.text = "has encontrado frasco de píldoras curativas. 25 de vida extra." +  health.ToString();
+        info.text = "has encontrado frasco de píldoras curativas. 25 de vida extra." +  personaje.salud.ToString();
         string mensaje = info.text;
         yield return StartCoroutine(Typing(mensaje));
         yield return new WaitForSeconds(8.0f);
@@ -29,9 +29,9 @@ public class ItemsManager : MonoBehaviour
     }
 
 
-    public IEnumerator Recargador(float balas)
+    public IEnumerator Recargador(Disparo disparo)
     {
-        balas = balas + 30;
+        disparo.balasDisp += 30;
 
         info.text = "has encontrado un cargador para tu arma. 30 de munición extra.";
         string mensaje = info.text;

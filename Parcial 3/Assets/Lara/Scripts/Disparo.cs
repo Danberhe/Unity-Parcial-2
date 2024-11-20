@@ -17,9 +17,10 @@ public class Disparo : MonoBehaviour
 
     public AudioSource sinBala;
 
-    public float balasDisp = 3f;
+    public float balasDisp = 72f;
 
-    public Text indBalas;
+    public Text balasInfo;
+
 
     void Awake()
     {
@@ -28,7 +29,7 @@ public class Disparo : MonoBehaviour
 
     void Update()
     {
-        indBalas.text = "Munición: " + balasDisp.ToString() + " / 400";
+        balasInfo.text = "Munision: " + balasDisp.ToString() + " / 500";
         // Detectar disparo al hacer clic izquierdo
         if (Input.GetMouseButton(0))
         {
@@ -81,8 +82,9 @@ public class Disparo : MonoBehaviour
         if (collision.tag == "municion")
         {
             Debug.Log("entro a municion");
-            StartCoroutine(itemsManager.Recargador(balasDisp));
+            StartCoroutine(itemsManager.Recargador(this));
             //ItemsManager.Instance.StartCoroutine(Recargador(balasDisp));
+            Destroy(collision.gameObject);
 
         }
     }

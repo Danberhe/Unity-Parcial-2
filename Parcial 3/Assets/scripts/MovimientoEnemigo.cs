@@ -123,7 +123,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
         if (other.CompareTag("Player") /*&& atacando*/)
         {
-            other.GetComponent<MovPersonaje>().getDamageP(damageGolpe);
+            StartCoroutine(other.GetComponent<MovPersonaje>().getDamageP(damageGolpe));
         }
     } 
 }
