@@ -25,7 +25,7 @@ public class MovPersonaje : MonoBehaviour
     //items
     public ItemsManager itemsManager;
 
-    public float salud = 450f;
+    public float salud = 400f;
  
 
     public Text indSalud;
@@ -44,7 +44,7 @@ public class MovPersonaje : MonoBehaviour
 
     void Update()
     {
-        indSalud.text = "Salud: " + salud.ToString() + " / 450";
+        indSalud.text = "Salud: " + salud.ToString() + " / 500";
         //indSalud.text = "";
         
         
@@ -74,7 +74,7 @@ public class MovPersonaje : MonoBehaviour
         salud = Mathf.Max(salud, 0); // Asegura que la salud no sea negativa
         
         Debug.Log("Zombie quitó : " + dmg + " de vida." + salud + "/ 200");
-        indSalud.text = "Salud: " + salud.ToString() + " / 450";
+        indSalud.text = "Salud: " + salud.ToString() + " / 400";
         yield return new WaitForSeconds(2f);
         indSalud.text = "";
         if (salud <= 0)
