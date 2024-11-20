@@ -8865,12 +8865,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.012788734, y: 0.047390245, z: 0.11966136}
-  m_Center: {x: -0.047933962, y: 0.44084755, z: 0.44016904}
+  m_Size: {x: 0.0394473, y: 0.047390245, z: 0.11966136}
+  m_Center: {x: -0.06126319, y: 0.44084755, z: 0.44016904}
 --- !u!114 &454697029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11966,8 +11966,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645132582}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15419391, y: 0.7380869, z: -0.15745734, w: -0.6376984}
-  m_LocalPosition: {x: -22.54, y: -5.8899994, z: -25.63}
+  m_LocalRotation: {x: -0.18239246, y: 0.5218469, z: -0.13368103, w: -0.8225194}
+  m_LocalPosition: {x: -6.9299994, y: -5.1000004, z: -24.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34979,7 +34979,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dear Esther,
+  m_Text: "Si lees esto, Es porque la situaci\xF3n se sali\xF3 de control. No tuvimos
+    m\xE1s remedio que irnos. Logr\xE9 contactar a un grupo de supervivientes. Se
+    encuentran en el norte de California, por la gran monta\xF1a.\nDebajo de la mesa
+    encontrar\xE1s las llaves del helic\xF3ptero. Espero que a\xFAn est\xE9 en buen
+    estado.\nLamento no haberte esperado, hija, pero s\xE9 que encontrar\xE1s la
+    forma de encontrarnos. \nCon cari\xF1o, Pap\xE1\n\n\n\n\n\n\n"
 --- !u!222 &1771322798
 CanvasRenderer:
   m_ObjectHideFlags: 0
