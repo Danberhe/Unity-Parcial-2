@@ -19,9 +19,8 @@ public class MovimientoEnemigo : MonoBehaviour
     public CapsuleCollider col;
     
 
-    //private bool persiguiendo = false;
 
-    //para atacar(quitar vida)
+    
     public float salud = 150f;
     public int damageGolpe;
 
@@ -36,7 +35,7 @@ public class MovimientoEnemigo : MonoBehaviour
     void Start()
     {
         sonido.Play();
-        agent.enabled = false; // Desactivamos el NavMeshAgent al inicio
+        agent.enabled = false; 
     }
 
     void Update()
@@ -53,8 +52,8 @@ public class MovimientoEnemigo : MonoBehaviour
 
         if (Distancia < rangoAtacando)
         {
-            //persiguiendo = true;
-            agent.enabled = true; // Activamos el NavMeshAgent para que persiga
+            
+            agent.enabled = true;
 
             PerseguirJugador();
         }
@@ -75,7 +74,7 @@ public class MovimientoEnemigo : MonoBehaviour
         {
             anim.SetBool("atacar", true);
             agent.destination = transform.position;
-            agent.isStopped = true; // Pausar el movimiento
+            agent.isStopped = true;
             StartCoroutine(waitAnim());
         }
 
@@ -85,7 +84,7 @@ public class MovimientoEnemigo : MonoBehaviour
     {
 
         yield return new WaitForSeconds(2.12f);
-        agent.isStopped = false; // Reanudar el movimiento
+        agent.isStopped = false; 
 
     }
 
@@ -117,11 +116,11 @@ public class MovimientoEnemigo : MonoBehaviour
         
 
     }
-    // Método para detectar cuando el jugador entra al rangos del enemigo
+    
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Player") /*&& atacando*/)
+        if (other.CompareTag("Player"))
         {
             StartCoroutine(other.GetComponent<MovPersonaje>().getDamageP(damageGolpe));
         }

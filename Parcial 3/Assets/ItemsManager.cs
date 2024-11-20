@@ -12,7 +12,7 @@ public class ItemsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        info.text = "";
+        info.text = "Debo...encontrar la carta.";
     }
 
     public IEnumerator efectPildora(MovPersonaje personaje)

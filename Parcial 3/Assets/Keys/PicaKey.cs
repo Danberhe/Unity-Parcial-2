@@ -11,14 +11,14 @@ public class PicaKey : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            // Recorre cada puerta en el arreglo ColliderPuerta, ya que una llave puede abrir varias puertas.
+            //un arreglo, ya que una llave puede abrir varias puertas.
             for (int i = 0; i < ColliderPuerta.Length; i++)
             {
                 // Activa el colider de cada puerta
                 ColliderPuerta[i].SetActive(true);
             }
-            // Destruye la llave
-            Destroy(objetoLlave);//se supone que debe pasar a el inventario (todas las llaves recogidas)
+            
+            Destroy(objetoLlave);
         }
     }
 }
