@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class RotarEstatua : MonoBehaviour
 {
-    public Transform simbolo; // Referencia al símbolo en la pared
-    public Transform estatua; // Referencia al objeto de la estatua
-    public float anguloPermitido = 5f; // Margen de error para considerar que está mirando el símbolo
-    public PuzzleManager puzzleManager; // Referencia al gestor del puzzle
+    public Transform simbolo; 
+    public Transform estatua; 
+    public float anguloPermitido = 5f; 
+    public PuzzleManager puzzleManager; 
 
-    public GameObject teclaUI; // Referencia al UI de la tecla (imagen)
-
+    public GameObject teclaUI; 
     private bool interactuar = false;
     private bool estatuaAlineada = false;
 
     void Start()
     {
-        // Asegúrate de que el UI esté desactivado al inicio
+        
         if (teclaUI != null)
         {
             teclaUI.SetActive(false);
@@ -25,10 +24,10 @@ public class RotarEstatua : MonoBehaviour
 
     void Update()
     {
-        // Si el jugador está en rango y presiona un botón
+       
         if (interactuar && Input.GetKeyDown(KeyCode.E))
         {
-            estatua.Rotate(0, 90, 0); // Rota la estatua 90 grados en Y
+            estatua.Rotate(0, 90, 0);
             VerificarDireccion();
         }
     }
@@ -37,7 +36,7 @@ public class RotarEstatua : MonoBehaviour
     {
         if (estatuaAlineada) return;
 
-        // Calcula el ángulo entre la dirección de la estatua y el símbolo
+       
         Vector3 direccionEstatua = estatua.forward;
         Vector3 direccionSimbolo = (simbolo.position - estatua.position).normalized;
 
@@ -46,18 +45,18 @@ public class RotarEstatua : MonoBehaviour
         if (angulo < anguloPermitido)
         {
             estatuaAlineada = true;
-            puzzleManager.EstatuaCorrecta(); // Notifica al puzzle manager que esta estatua está correcta
+            puzzleManager.EstatuaCorrecta(); 
             Debug.Log("Estatua alineada con el símbolo.");
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Asegúrate de que el jugador tenga el tag "Player"
+        if (other.CompareTag("Player"))
         {
             interactuar = true;
 
-            // Muestra el UI de la tecla
+            
             if (teclaUI != null)
             {
                 teclaUI.SetActive(true);
@@ -71,7 +70,7 @@ public class RotarEstatua : MonoBehaviour
         {
             interactuar = false;
 
-            // Oculta el UI de la tecla
+            
             if (teclaUI != null)
             {
                 teclaUI.SetActive(false);

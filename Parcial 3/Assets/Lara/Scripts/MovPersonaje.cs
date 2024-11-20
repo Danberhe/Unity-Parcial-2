@@ -7,8 +7,8 @@ public class MovPersonaje : MonoBehaviour
 {
     public Disparo disparoScript; 
     
-    public float VeloMov = 5.0f; // Velocidad del movimiento del personaje
-    public float VeloRot = 200.0f; // Velocidad de rotación del personaje
+    public float VeloMov = 5.0f; 
+    public float VeloRot = 200.0f; 
     public float x, y;
     Vector3 velocidad;
     public float gravedad = -9.8f;
@@ -39,7 +39,7 @@ public class MovPersonaje : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        disparoScript = GetComponent<Disparo>(); // es pa obtener el componente disparo
+        disparoScript = GetComponent<Disparo>(); 
     }
 
     void Update()
@@ -48,7 +48,7 @@ public class MovPersonaje : MonoBehaviour
         //indSalud.text = "";
         
         
-        // Movimiento y rotación del personaje según las entradas del jugador
+        
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
@@ -61,7 +61,7 @@ public class MovPersonaje : MonoBehaviour
         velocidad.y += gravedad * Time.deltaTime;
         controlador.Move(velocidad * Time.deltaTime);
 
-        // Rotación del personaje
+        
         transform.Rotate(0, x * Time.deltaTime * VeloRot, 0);
     }
 
@@ -69,9 +69,9 @@ public class MovPersonaje : MonoBehaviour
     {
         salud -= dmg;
         
-        //aca espera 2 segundos
+        
         golpeada.Play();
-        salud = Mathf.Max(salud, 0); // Asegura que la salud no sea negativa
+        salud = Mathf.Max(salud, 0);
         
         Debug.Log("Zombie quitó : " + dmg + " de vida." + salud + "/ 200");
         indSalud.text = "Salud: " + salud.ToString() + " / 400";

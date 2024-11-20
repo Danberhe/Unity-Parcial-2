@@ -2,16 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
-using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
-    public GameObject llave; // Referencia a la llave
-    private int estatuasCorrectas = 0; // Número de estatuas que están correctamente alineadas
-    public int totalEstatuas = 4; // Total de estatuas en el puzzle
-
+    public GameObject llave; 
+    private int estatuasCorrectas = 0; 
+    public int totalEstatuas = 4; 
     public void EstatuaCorrecta()
     {
         estatuasCorrectas++;
