@@ -17,7 +17,7 @@ public class Disparo : MonoBehaviour
 
     public AudioSource sinBala;
 
-    public float balasDisp = 128f;
+    public float balasDisp = 72f;
 
     public Text balasInfo;
 
@@ -29,7 +29,7 @@ public class Disparo : MonoBehaviour
 
     void Update()
     {
-        balasInfo.text = "Munición: " + balasDisp.ToString() + " / 500";
+        balasInfo.text = "Munision: " + balasDisp.ToString() + " / 500";
         // Detectar disparo al hacer clic izquierdo
         if (Input.GetMouseButton(0))
         {
