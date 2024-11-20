@@ -13,10 +13,5 @@ public class CartaFinal : MonoBehaviour
             CartaPanel.SetActive(true);
             Time.timeScale = 0;
         }
-        else
-        {
-            CartaPanel.SetActive(false);
-            Time.timeScale = 1;
-        }
     } 
 }
