@@ -19,7 +19,7 @@ public class ItemsManager : MonoBehaviour
     {
         personaje.salud += 25;
         //Destroy(gameObject);
-        info.text = "has encontrado frasco de píldoras curativas. 25 de vida extra." +  personaje.salud.ToString();
+        info.text = "has encontrado frasco de píldoras curativas. 25 de vida extra.";
         string mensaje = info.text;
         yield return StartCoroutine(Typing(mensaje));
         yield return new WaitForSeconds(8.0f);
