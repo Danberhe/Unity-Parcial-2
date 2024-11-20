@@ -42,13 +42,13 @@ public class ItemsManager : MonoBehaviour
     }
 
 
-    private IEnumerator Typing(string mensaje)
+    private IEnumerator Typing(string mensaje)//efecto en la letra
     {
         info.text = "";
         foreach (char letter in mensaje.ToCharArray())
         {
-            info.text += letter;  // Añadir una letra al texto
-            yield return new WaitForSeconds(0.003f);  // Retardo entre cada letra
+            info.text += letter;  
+            yield return new WaitForSeconds(0.003f); 
         }
     }
     
