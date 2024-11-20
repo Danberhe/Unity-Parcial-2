@@ -1819,7 +1819,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 23226ac25ba0a684385f54b737acc068, type: 3}
-    m_FontSize: 127
+    m_FontSize: 74
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 10
@@ -1830,7 +1830,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dear Easther,
+  m_Text: "Si lees esto, es porque la situaci\xF3n se sali\xF3 de control. No tuvimos
+    m\xE1s remedio que irnos. Logr\xE9 contactar a un grupo de supervivientes. Se
+    encuentran en el norte de California, por la gran monta\xF1a.\nDebajo de la mesa
+    encontrar\xE1s las llaves del helic\xF3ptero. Lamento no haberte esperado, hija,
+    pero s\xE9 que encontrar\xE1s la forma de encontrarnos.\n"
 --- !u!222 &102537452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8169,7 +8173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322639146}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.060237847, y: -0.047976274, z: 0.002898608, w: 0.99702626}
+  m_LocalRotation: {x: 0.06351301, y: -0.059094943, z: 0.003767528, w: 0.99622273}
   m_LocalPosition: {x: 14.597534, y: -1.5791359, z: -41.123405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11994,7 +11998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500679281}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2258839, y: 0.015248831, z: -0.0035363035, w: 0.97402847}
+  m_LocalRotation: {x: 0.2647091, y: -0.01140842, z: 0.003131858, w: 0.9642558}
   m_LocalPosition: {x: 8.762669, y: 0.22551155, z: -3.5667167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16388,7 +16392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800257188}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13890977, y: -0.5833071, z: 0.10208155, w: 0.79374826}
+  m_LocalRotation: {x: 0.13039589, y: -0.6385168, z: 0.11096597, w: 0.75031984}
   m_LocalPosition: {x: 30.25, y: -0.34, z: 7.1900005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26749,7 +26753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246007819}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.020042852, y: 0.3917081, z: -0.008535199, w: 0.91983163}
+  m_LocalRotation: {x: 0.020904673, y: 0.40486985, z: -0.009259139, w: 0.9140884}
   m_LocalPosition: {x: -31.94, y: -5.77, z: -25.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28025,7 +28029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8850767755389611072, guid: d4bd93e23dad10b43829e2cdc8c4c16e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0004386902
+      value: -0.88
       objectReference: {fileID: 0}
     - target: {fileID: 8850767755389611072, guid: d4bd93e23dad10b43829e2cdc8c4c16e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28033,7 +28037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8850767755389611072, guid: d4bd93e23dad10b43829e2cdc8c4c16e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.767853
+      value: 20.75
       objectReference: {fileID: 0}
     - target: {fileID: 8850767755389611072, guid: d4bd93e23dad10b43829e2cdc8c4c16e, type: 3}
       propertyPath: m_LocalRotation.w
