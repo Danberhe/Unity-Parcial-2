@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigo
   - Enemy
+  - pildora
   layers:
   - Default
   - TransparentFX

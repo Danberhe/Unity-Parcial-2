@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovPersonaje : MonoBehaviour
 {
@@ -13,13 +14,22 @@ public class MovPersonaje : MonoBehaviour
     public float gravedad = -9.8f;
 
     private Animator animator;
-    public float salud = 200f;
+    
     public float TiempoMuerte = 2.0f;
 
     public AudioSource MusicaFondo;
     public AudioSource golpeada;
 
     public CharacterController controlador;
+
+    //items
+    public ItemsManager itemsManager;
+
+    public float salud = 200f;
+ 
+
+    public Text indSalud;
+
 
     void Start(){
         MusicaFondo.Play();
@@ -33,6 +43,9 @@ public class MovPersonaje : MonoBehaviour
 
     void Update()
     {
+        indSalud.text = "Salud: " + salud.ToString() + " / 500";
+        
+        
         // Movimiento y rotación del personaje según las entradas del jugador
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
@@ -70,5 +83,27 @@ public class MovPersonaje : MonoBehaviour
         this.enabled = false;
         disparoScript.enabled = false;
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "pildora")
+        {
+            Debug.Log("entro a pildoras");
+            StartCoroutine(itemsManager.efectPildora(ref salud));
+            //ItemsManager.Instance.StartCoroutine(efectPildora(salud));
+            Destroy(collision.gameObject);
+
+           
+
+        }
+
+    }
+
+
+
+
+
+
+
 }
 
