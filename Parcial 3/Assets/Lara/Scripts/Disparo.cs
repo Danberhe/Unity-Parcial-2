@@ -8,9 +8,9 @@ public class Disparo : MonoBehaviour
     public ItemsManager itemsManager;
     
     public Transform weaponTransform;
-    public float TimeDisparo = 0.5f; // Tiempo entre disparos
-    public GameObject Balaprefa; // Prefab del proyectil
-    public float velBala = 20f; // Velocidad del proyectil
+    public float TimeDisparo = 0.5f;
+    public GameObject Balaprefa;
+    public float velBala = 20f;
     
     private float nextFireTime = 0f;
     private Animator animator;
@@ -30,13 +30,13 @@ public class Disparo : MonoBehaviour
     void Update()
     {
         balasInfo.text = "Munición: " + balasDisp.ToString() + " / 500";
-        // Detectar disparo al hacer clic izquierdo
+        
         if (Input.GetMouseButton(0))
         {
-            // Activar animación de disparo
+           
             animator.SetBool("Disparando", true);
 
-            // Verificar si es el momento de disparar
+            
             if (Time.time >= nextFireTime)
             {
                 Shoot();
@@ -45,7 +45,7 @@ public class Disparo : MonoBehaviour
         }
         else
         {
-            // Detener la animación si no se está disparando
+            
             animator.SetBool("Disparando", false);
         }
     }
@@ -54,9 +54,9 @@ public class Disparo : MonoBehaviour
     {
         if(balasDisp > 0 ){
 
-            if (Balaprefa != null && weaponTransform != null) // Asegúrate de que haya un prefab asignado
+            if (Balaprefa != null && weaponTransform != null)
             {
-                // Instanciar el proyectil en el punto de disparo y orientado según la rotación actual del arma
+                
                 GameObject projectile = Instantiate(Balaprefa, weaponTransform.position, weaponTransform.rotation);
                 balasDisp--;
 
@@ -64,7 +64,7 @@ public class Disparo : MonoBehaviour
 
                 if (rb != null)
                 {
-                    rb.velocity = -weaponTransform.forward * velBala; // Proyectil viaja hacia adelante
+                    rb.velocity = -weaponTransform.forward * velBala;
                 }
             }else{
                 Debug.Log("SE ACABOO");
